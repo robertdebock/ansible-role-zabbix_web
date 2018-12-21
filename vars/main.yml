@@ -1,0 +1,18 @@
+---
+# vars file for zabbix_web
+_zabbix_web_packages:
+  Debian:
+    - zabbix-frontend-php
+  CentOS:
+    - zabbix-web-mysql
+  Ubuntu:
+    - zabbix-frontend-php
+
+zabbix_web_packages: "{{ _zabbix_web_packages[ansible_distribution] }}"
+
+_zabbix_web_httpd_service:
+  CentOS: httpd
+  Debian: apache2
+  Ubuntu: apache2
+
+zabbix_web_httpd_service: "{{ _zabbix_web_httpd_service[ansible_distribution] }}"

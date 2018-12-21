@@ -1,0 +1,16 @@
+---
+# tasks file for zabbix_web
+- name: install zabbix_web
+  package:
+    name: "{{ zabbix_web_packages }}"
+    state: "{{ zabbix_web_package_state }}"
+  register: zabbix_web_install_zabbix_web
+  until: zabbix_web_install_zabbix_web is succeeded
+  retries: 3
+
+- name: configure zabbix_web
+  template:
+    src: zabbix.conf.php.j2
+    dest: /etc/zabbix/web/zabbix.conf.php
+  notify:
+    - restart httpd

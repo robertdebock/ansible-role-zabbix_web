@@ -1,0 +1,8 @@
+---
+# handlers file for zabbix_web
+- name: restart httpd
+  service:
+    name: "{{ zabbix_web_httpd_service }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker" or zabbix_web_ignore_docker
