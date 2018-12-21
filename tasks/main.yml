@@ -14,3 +14,63 @@
     dest: /etc/zabbix/web/zabbix.conf.php
   notify:
     - restart httpd
+
+- name: install zabbix-api requirements
+  pip:
+    name: zabbix-api
+    state: "{{ zabbix_package_state }}"
+  register: zabbix_install_zabbix_api_requirements
+  retries: 3
+  until: zabbix_install_zabbix_api_requirements is succeeded
+  when:
+    - zabbix_web_groups is defined or
+      zabbix_web_hosts is defined
+    - zabbix_web == "present"
+
+- name: add zabbix groups
+  zabbix_group:
+    server_url: "{{ zabbix_web_server }}"
+    login_user: "{{ zabbix_web_username }}"
+    login_password: "{{ zabbix_web_password }}"
+    validate_certs: "{{ zabbix_validate_certs }}"
+    state: present
+    host_groups:
+      - "{{ item.name }}"
+  with_items:
+    - "{{ zabbix_web_groups }}"
+  when:
+    - zabbix_web_groups is defined
+    - zabbix_web == "present"
+    - ansible_virtualization_type != "docker" or zabbix_ignore_docker
+  run_once: yes
+
+- name: add zabbix hosts
+  zabbix_host:
+    server_url: "{{ zabbix_web_server }}"
+    login_user: "{{ zabbix_web_username }}"
+    login_password: "{{ zabbix_web_password }}"
+    validate_certs: "{{ zabbix_validate_certs }}"
+    host_name: "{{ item.name }}"
+    visible_name: "{{ item.visible_name | default(item.name) }}"
+    description: "{{ item.description | default([omit]) }}"
+    host_groups:
+      - "{{ item.groups }}"
+    link_templates:
+      - "{{ item.link_templates }}"
+    status: enabled
+    state: present
+    inventory_mode: manual
+    interfaces:
+      - type: 1
+        main: 1
+        useip: 1
+        ip: "{{ item.interface_ip | default([omit]) }}"
+        dns: "{{ item.interface_dns }} | default([omit]) }}"
+        port: 10050
+  with_items:
+    - "{{ zabbix_web_hosts }}"
+  when:
+    - zabbix_web_groups is defined
+    - zabbix_web == "present"
+    - ansible_virtualization_type != "docker" or zabbix_ignore_docker
+  run_once: yes
