@@ -31,6 +31,18 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for zabbix_web
 
+# Details to connect to the database.
+zabbix_web_database_host: localhost
+zabbix_web_database_port: 3306
+zabbix_web_database_name: zabbix
+zabbix_web_database_user: zabbix
+zabbix_web_database_pass: zabbix
+
+# Details to connect to Zabbix.
+zabbix_web_server: http://localhost/zabbix
+zabbix_web_server_port: 10051
+zabbix_web_server_name: zabbix
+
 # To update packages this role places on the system, set `zabbix_web_package_state` to `latest`.
 zabbix_web_package_state: present
 
