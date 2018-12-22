@@ -25,7 +25,6 @@
   when:
     - zabbix_web_groups is defined or
       zabbix_web_hosts is defined
-    - zabbix_web == "present"
 
 - name: add zabbix groups
   zabbix_group:
@@ -40,7 +39,6 @@
     - "{{ zabbix_web_groups }}"
   when:
     - zabbix_web_groups is defined
-    - zabbix_web == "present"
     - ansible_virtualization_type != "docker" or zabbix_ignore_docker
   run_once: yes
 
@@ -71,6 +69,5 @@
     - "{{ zabbix_web_hosts }}"
   when:
     - zabbix_web_groups is defined
-    - zabbix_web == "present"
     - ansible_virtualization_type != "docker" or zabbix_ignore_docker
   run_once: yes
