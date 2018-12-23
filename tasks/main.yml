@@ -28,7 +28,7 @@
 - name: install zabbix-api requirements
   pip:
     name: zabbix-api
-    state: "{{ zabbix_package_state }}"
+    state: "{{ zabbix_web_package_state }}"
   register: zabbix_install_zabbix_api_requirements
   retries: 3
   until: zabbix_install_zabbix_api_requirements is succeeded
