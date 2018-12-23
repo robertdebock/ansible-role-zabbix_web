@@ -4,8 +4,8 @@
   assert:
     that:
       - zabbix_web_database_host is defined
-      - zabbix_web_database_port => 0
-      - zabbix_web_database_port =< 65536
+      - zabbix_web_database_port >= 0
+      - zabbix_web_database_port <= 65536
       - zabbix_web_database_name is defined
       - zabbix_web_database_user is defined
       - zabbix_web_database_pass is defined
