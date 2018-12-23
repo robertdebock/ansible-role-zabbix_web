@@ -1,3 +1,6 @@
 ---
 - robertdebock.bootstrap
+- robertdebock.epel
+- robertdebock.buildtools
+- robertdebock.python_pip
 - robertdebock.zabbix_repository

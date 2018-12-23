@@ -6,5 +6,8 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.buildtools
+    - role: robertdebock.python_pip
     - role: robertdebock.zabbix_repository
     - role: ansible-role-zabbix_web
