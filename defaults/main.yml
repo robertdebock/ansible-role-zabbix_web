@@ -13,6 +13,11 @@ zabbix_web_server: http://localhost/zabbix
 zabbix_web_server_port: 10051
 zabbix_web_server_name: zabbix
 
+# Details to connect to the Zabbix API.
+server_url: localhost
+login_user: Admin
+login_password: Zabbix
+
 # You can provision Zabbix groups.
 # Most options map directly to the documentation:
 # https://docs.ansible.com/ansible/latest/modules/zabbix_group_module.html
