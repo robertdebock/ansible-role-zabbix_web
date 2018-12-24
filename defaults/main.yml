@@ -9,7 +9,7 @@ zabbix_web_database_user: zabbix
 zabbix_web_database_pass: zabbix
 
 # Details to connect to Zabbix.
-zabbix_web_server: http://localhost/zabbix
+zabbix_web_server: https://localhost/zabbix
 zabbix_web_server_port: 10051
 zabbix_web_server_name: zabbix
 
