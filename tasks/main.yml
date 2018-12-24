@@ -9,6 +9,11 @@
       - zabbix_web_database_name is defined
       - zabbix_web_database_user is defined
       - zabbix_web_database_pass is defined
+      - zabbix_web_server is defined
+      - zabbix_web_username is defined
+      - zabbix_web_password is defined
+      - zabbix_web_validate_certs or
+        not zabbix_web_validate_certs
 
 - name: install zabbix_web
   package:
