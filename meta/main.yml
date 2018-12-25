@@ -21,14 +21,11 @@ galaxy_info:
         - bionic
 
   galaxy_tags:
-    - zabbix_web
-    - alpine
-    - archlinux
+    - zabbix
+    - web
     - centos
     - debian
     - el
-    - fedora
-    - opensuse
     - rhel
     - ubuntu
 
