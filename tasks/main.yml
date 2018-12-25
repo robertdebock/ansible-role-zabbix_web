@@ -80,7 +80,7 @@
         main: 1
         useip: 1
         ip: "{{ item.interface_ip | default([omit]) }}"
-        dns: "{{ item.interface_dns }} | default([omit]) }}"
+        dns: "{{ item.interface_dns | default([omit]) }}"
         port: 10050
   with_items:
     - "{{ zabbix_web_hosts }}"
