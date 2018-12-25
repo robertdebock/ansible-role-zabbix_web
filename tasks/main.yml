@@ -30,6 +30,9 @@
   notify:
     - restart httpd
 
+- name: flush privileges
+  meta: flush_privileges
+
 - name: install zabbix-api requirements
   pip:
     name: zabbix-api
