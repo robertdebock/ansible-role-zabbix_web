@@ -88,3 +88,5 @@
     - zabbix_web_groups is defined
     - ansible_virtualization_type != "docker" or zabbix_web_ignore_docker
   run_once: yes
+  loop_control:
+    label: "{{ item.name }}"
