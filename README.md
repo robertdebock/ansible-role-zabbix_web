@@ -42,9 +42,14 @@ zabbix_web_database_user: zabbix
 zabbix_web_database_pass: zabbix
 
 # Details to connect to Zabbix.
-zabbix_web_server: http://localhost/zabbix
+zabbix_web_server: https://localhost/zabbix
 zabbix_web_server_port: 10051
 zabbix_web_server_name: zabbix
+
+# Details to connect to the Zabbix API.
+zabbix_web_username: Admin
+zabbix_web_password: zabbix
+zabbix_web_validate_certs: no
 
 # You can provision Zabbix groups.
 # Most options map directly to the documentation:
@@ -111,7 +116,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
-|centos-6|yes|yes|yes*|
+|centos-6|no|no|no*|
 |centos-latest|yes|yes|yes*|
 |debian-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
