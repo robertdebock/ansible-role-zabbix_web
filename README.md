@@ -13,8 +13,20 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
-  become: true
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - robertdebock.zabbix_web
+```
+
+The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
 
   roles:
     - role: robertdebock.bootstrap
@@ -22,8 +34,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
     - role: robertdebock.zabbix_repository
-    - role: robertdebock.zabbix_web
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -72,15 +82,6 @@ zabbix_web_hosts:
       - Linux servers
     link_templates:
       - Template OS Linux
-
-# To update packages this role places on the system, set `zabbix_web_package_state` to `latest`.
-zabbix_web_package_state: present
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-zabbix_web_ignore_docker: yes
-
 ```
 
 Requirements

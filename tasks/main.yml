@@ -18,7 +18,7 @@
 - name: install zabbix_web
   package:
     name: "{{ zabbix_web_packages }}"
-    state: "{{ zabbix_web_package_state }}"
+    state: present
   register: zabbix_web_install_zabbix_web
   until: zabbix_web_install_zabbix_web is succeeded
   retries: 3
@@ -36,7 +36,7 @@
 - name: install zabbix-api requirements
   pip:
     name: zabbix-api
-    state: "{{ zabbix_web_package_state }}"
+    state: present
   register: zabbix_install_zabbix_api_requirements
   retries: 3
   until: zabbix_install_zabbix_api_requirements is succeeded
@@ -57,7 +57,7 @@
     - "{{ zabbix_web_groups }}"
   when:
     - zabbix_web_groups is defined
-    - ansible_virtualization_type != "docker" or zabbix_web_ignore_docker
+    - ansible_virtualization_type != "docker"
   run_once: yes
 
 - name: add zabbix hosts
@@ -86,7 +86,7 @@
     - "{{ zabbix_web_hosts }}"
   when:
     - zabbix_web_groups is defined
-    - ansible_virtualization_type != "docker" or zabbix_web_ignore_docker
+    - ansible_virtualization_type != "docker"
   run_once: yes
   loop_control:
     label: "{{ item.name }}"
