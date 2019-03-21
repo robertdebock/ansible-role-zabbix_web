@@ -52,9 +52,6 @@ platforms:
   - name: zabbix_web-ubuntu-devel
     image: ubuntu:devel
     pre_build_image: yes
-  - name: zabbix_web-ubuntu-latest
-    image: ubuntu:latest
-    pre_build_image: yes
 provisioner:
   name: ansible
   playbooks:
