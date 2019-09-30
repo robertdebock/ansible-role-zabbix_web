@@ -6,6 +6,9 @@ zabbix_web
 
 Install and configure zabbix_web on your system.
 
+<img src="https://img.shields.io/ansible/role/d/35789"/>
+<img src="https://img.shields.io/ansible/quality/35789"/>
+
 Example Playbook
 ----------------
 
@@ -103,6 +106,19 @@ The following roles can be installed to ensure all requirements are met, using `
 
 ```
 
+This role uses the following modules:
+```yaml
+---
+- assert
+- meta
+- package
+- pip
+- service
+- template
+- zabbix_group
+- zabbix_host
+```
+
 Context
 -------
 
@@ -134,6 +150,9 @@ This role has been tested against the following distributions and Ansible versio
 |ubuntu-rolling|no|no|no*|
 
 A single star means the build may fail, it's marked as an experimental build.
+
+
+
 
 Testing
 -------
