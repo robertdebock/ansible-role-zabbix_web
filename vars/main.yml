@@ -3,16 +3,13 @@
 _zabbix_web_packages:
   Debian:
     - zabbix-frontend-php
-  CentOS:
+  RedHat:
     - zabbix-web-mysql
-  Ubuntu:
-    - zabbix-frontend-php
 
-zabbix_web_packages: "{{ _zabbix_web_packages[ansible_distribution] }}"
+zabbix_web_packages: "{{ _zabbix_web_packages[ansible_os_family] }}"
 
 _zabbix_web_httpd_service:
-  CentOS: httpd
+  RedHat: httpd
   Debian: apache2
-  Ubuntu: apache2
 
-zabbix_web_httpd_service: "{{ _zabbix_web_httpd_service[ansible_distribution] }}"
+zabbix_web_httpd_service: "{{ _zabbix_web_httpd_service[ansible_os_family] }}"
