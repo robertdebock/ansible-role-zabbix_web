@@ -1,20 +1,5 @@
 ---
 # tasks file for zabbix_web
-- name: test veriables and environment
-  assert:
-    that:
-      - zabbix_web_database_host is defined
-      - zabbix_web_database_port >= 0
-      - zabbix_web_database_port <= 65536
-      - zabbix_web_database_name is defined
-      - zabbix_web_database_user is defined
-      - zabbix_web_database_pass is defined
-      - zabbix_web_server is defined
-      - zabbix_web_username is defined
-      - zabbix_web_password is defined
-      - zabbix_web_validate_certs or
-        not zabbix_web_validate_certs
-
 - name: install zabbix_web
   package:
     name: "{{ zabbix_web_packages }}"
