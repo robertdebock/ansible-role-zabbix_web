@@ -137,8 +137,8 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
-|centos-7|no|no|no*|
-|centos-latest|yes|yes|yes*|
+|centos-7|yes|yes|yes*|
+|centos-latest|no|no|no*|
 |debian-stable|no|no|no*|
 |debian-unstable*|no|no|no*|
 |fedora-latest|no|no|no*|
@@ -150,6 +150,20 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| Alpine | Zabbix has [limited OS support](https://www.zabbix.com/download). |
+| Archlinux | Zabbix has [limited OS support](https://www.zabbix.com/download). |
+| CentOS 8 | Zabbix has [limited OS support](https://www.zabbix.com/download). |
+| Debian | Zabbix has [limited OS support](https://www.zabbix.com/download). |
+| Fedora | Zabbix has [limited OS support](https://www.zabbix.com/download). |
+| openSUSE | Zabbix has [limited OS support](https://www.zabbix.com/download). |
+| Ubuntu rolling | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 
 
 
