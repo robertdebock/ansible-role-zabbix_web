@@ -11,19 +11,19 @@ env:
   global:
     - namespace="robertdebock/"
   matrix:
-    - image="docker-alpine-openrc"
-    - image="docker-alpine-openrc" tag="edge"
+    # - image="docker-alpine-openrc"
+    # - image="docker-alpine-openrc" tag="edge"
     # - namespace="archlinux/" image="base"
     - image="docker-centos-systemd" tag="7"
-    - image="docker-centos-systemd"
-    - image="docker-debian-systemd" tag="stable"
-    - image="docker-debian-systemd" tag="unstable"
-    - image="docker-debian-systemd"
-    - image="docker-fedora-systemd"
-    - image="docker-fedora-systemd" tag="rawhide"
-    - namespace="opensuse/" image="leap"
-    - image="docker-ubuntu-systemd" tag="rolling"
-    - image="docker-ubuntu-systemd" tag="devel"
+    # - image="docker-centos-systemd"
+    # - image="docker-debian-systemd" tag="stable"
+    # - image="docker-debian-systemd" tag="unstable"
+    # - image="docker-debian-systemd"
+    # - image="docker-fedora-systemd"
+    # - image="docker-fedora-systemd" tag="rawhide"
+    # - namespace="opensuse/" image="leap"
+    # - image="docker-ubuntu-systemd" tag="rolling"
+    # - image="docker-ubuntu-systemd" tag="devel"
     - image="docker-ubuntu-systemd"
 
 matrix:
@@ -47,5 +47,5 @@ script:
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   slack:
-    secure: "Yvnx55vR88xKIkwGMM8sRAuMXhknG7wxCG2fIeYCSc0dVzYecJj2+LU6305jy7ucitw1Seun7LaOE3S9BgX9QcYEEgIHy/WxLzLfHKvHEP45gMfLSHB6Vr1f+a8gdgQ1Wjwi2vyurH6EyAh6E7vDUuEmFKylaI2pSE4T4JZ4oqUDtHbeXMladVYfh7CyBSPA93VFL6h9jSFtcPXtRJnJvZlQYYnkwvLMdZilBNQIFhxxVHnnyrKMJoB4mC/EJSSqBuN+dfRzoKihgUtnGzaJjmUDXDH7hgd2IS9oHUNUhu2et4/wzWyCYrVWonFpvZrn0g6MhQDlRi+CP6BaRWOZcjMKnsNMPirByfM0RG8J0V5xG/XjFAeg6xYa4m1PqQo0Lr9ZJTPUmi6AwFt/ShXMpT1nqTcKxoUDA4UzDD7T7Gs147tiqtcfl9zgN/iSH/xqRZSmQ8TvNeoDgCoMjlqAXZ2VbU4DlKn0JlEapGV/AjIy6tVO29SBr4GNTOPmVX5XbXNHm4+iqfiR6+/naCjYPRXYtaBG5GUELeZQYTY+AW6+tf5hEGHH7s1pIoQ+ck4enkySEvtZ1Ii7S9OblCG3tQN+XMouEMEBw1K24UseHhzqxSdUn7tXTcs/nk1SQdlugU3UanJqZzI+6U49xUEfBqoNO/oF5ER5YXnLXeosBw4="
+    secure: "Xv3JL3RaPsfp5TUusfgj3gmVb6bA+rGQH/PSQbgHrw4MJvVwEI6hEYTQ7URs2YXsuF9naNHaWyVsbZZygXYhN0Cokairny9jScGqUFajO5rP6iQuWG0+ob4LyUVTMAwuMsUE5OVcL4qSfYXkJWetTufkEvkM6sJCQ4MwAjIYGXMzT7CjjGXP5CqJWsg66JtnKGT1BegiW8hwjCXBEAgHC3+YamfyKLpYIL082Ju7DiBZqAJc9iXITFC6jIct+XAXPw2mvHKY9MgzdIffQvmLUap4BngIYWQAHxefxS2b9dQ8W9f0j8Nbph9Q0ejfiwGAKxg2fsI0fvaq6Dp5N4NTxz2bA/cwsfWew3ijshLia2jdmDWGHnnL5CB5xHyKTBPjCD5ZKFnNwE64HrOVtlHIDauJbLuxDWKLw/s0eIvxgL+3+aGXaIbBsw32bXUA2P8S7aLxBsuozP61WJUEsyedMfhvfbGTGrvEbrhQ2Rwaq6by/nN8T0L2UUBs8rstXHibo1FGYOQ8sAvL7eKJck2NICZCX2je2RhPa0trERFJRE9L6Ys1uIJ4emGoNrcabUH6M9BHuG/geXfLGpsaEYcfgGxoNw21bdS/d63+vvUOyBdAwlMx5OixsTHPqHrj1tr5ECklZn1FoMDe7Juk1FwjJoEC9kycGJNroxcf7iTEaFs="
   email: false
