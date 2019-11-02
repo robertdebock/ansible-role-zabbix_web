@@ -42,7 +42,6 @@
     - "{{ zabbix_web_groups }}"
   when:
     - zabbix_web_groups is defined
-    - ansible_virtualization_type != "docker"
   run_once: yes
 
 - name: add zabbix hosts
@@ -71,7 +70,6 @@
     - "{{ zabbix_web_hosts }}"
   when:
     - zabbix_web_groups is defined
-    - ansible_virtualization_type != "docker"
   run_once: yes
   loop_control:
     label: "{{ item.name }}"
