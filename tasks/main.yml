@@ -4,6 +4,8 @@
   package:
     name: "{{ zabbix_web_packages }}"
     state: present
+  notify:
+    - restart httpd
   register: zabbix_web_install_zabbix_web
   until: zabbix_web_install_zabbix_web is succeeded
   retries: 3

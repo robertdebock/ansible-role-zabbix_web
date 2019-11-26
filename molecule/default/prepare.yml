@@ -6,7 +6,19 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.container_docs
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: zabbix
+          encoding: utf8
+          collation: utf8_bin
+      mysql_users:
+        - name: zabbix
+          password: zabbix
+          priv: "zabbix.*:ALL"
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
+    - role: robertdebock.httpd
     - role: robertdebock.zabbix_repository
+    - role: robertdebock.zabbix_server
