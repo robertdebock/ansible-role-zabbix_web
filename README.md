@@ -18,7 +18,26 @@ This example is taken from `molecule/resources/playbook.yml` and is tested on ea
   gather_facts: yes
 
   roles:
-    - robertdebock.zabbix_web
+    - role: robertdebock.zabbix_web
+      # You can provision Zabbix groups.
+      # Most options map directly to the documentation:
+      # https://docs.ansible.com/ansible/latest/modules/zabbix_group_module.html
+      zabbix_web_groups:
+        - name: Linux servers
+      # Add hosts to Zabbix.
+      # Most options map directly to the documentation:
+      # https://docs.ansible.com/ansible/latest/modules/zabbix_host_module.html
+      zabbix_web_hosts:
+        - name: Example server 1
+          interface_ip: 192.168.127.127
+          interface_dns: server1.example.com
+          visible_name: Example server 1 name
+          description: Example server 1 description
+          groups:
+            - Linux servers
+          link_templates:
+            - Template OS Linux by Zabbix agent
+          inventory_mode: automatic
 ```
 
 The machine you are running this on, may need to be prepared, I use this playbook to ensure everything is in place to let the role work.
@@ -31,10 +50,22 @@ The machine you are running this on, may need to be prepared, I use this playboo
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.container_docs
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: zabbix
+          encoding: utf8
+          collation: utf8_bin
+      mysql_users:
+        - name: zabbix
+          password: zabbix
+          priv: "zabbix.*:ALL"
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
+    - role: robertdebock.httpd
     - role: robertdebock.zabbix_repository
+    - role: robertdebock.zabbix_server
 ```
 
 
@@ -56,7 +87,7 @@ zabbix_web_database_user: zabbix
 zabbix_web_database_pass: zabbix
 
 # Details to connect to Zabbix.
-zabbix_web_server: https://localhost/zabbix
+zabbix_web_server: https://localhost/zabbix/
 zabbix_web_server_port: 10051
 zabbix_web_server_name: zabbix
 
@@ -64,26 +95,6 @@ zabbix_web_server_name: zabbix
 zabbix_web_username: Admin
 zabbix_web_password: zabbix
 zabbix_web_validate_certs: no
-
-# You can provision Zabbix groups.
-# Most options map directly to the documentation:
-# https://docs.ansible.com/ansible/latest/modules/zabbix_group_module.html
-zabbix_web_groups:
-  - name: Linux servers
-
-# Add hosts to Zabbix.
-# Most options map directly to the documentation:
-# https://docs.ansible.com/ansible/latest/modules/zabbix_host_module.html
-zabbix_web_hosts:
-  - name: Example server 1
-    interface_ip: 192.168.127.127
-    interface_dns: server1.example.com
-    visible_name: Example server 1 name
-    description: Example server 1 description
-    groups:
-      - Linux servers
-    link_templates:
-      - Template OS Linux
 ```
 
 Requirements
@@ -97,10 +108,14 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
-- robertdebock.epel
 - robertdebock.buildtools
+- robertdebock.container_docs
+- robertdebock.epel
+- robertdebock.httpd
+- robertdebock.mysql
 - robertdebock.python_pip
 - robertdebock.zabbix_repository
+- robertdebock.zabbix_server
 
 ```
 
