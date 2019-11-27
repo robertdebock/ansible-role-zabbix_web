@@ -24,4 +24,3 @@
             - Linux servers
           link_templates:
             - Template OS Linux by Zabbix agent
-          inventory_mode: automatic
