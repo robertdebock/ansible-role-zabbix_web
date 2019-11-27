@@ -23,4 +23,4 @@
           groups:
             - Linux servers
           link_templates:
-            - Template OS Linux
+            - Template OS Linux by Zabbix agent
