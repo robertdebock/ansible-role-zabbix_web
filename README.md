@@ -37,7 +37,6 @@ This example is taken from `molecule/resources/playbook.yml` and is tested on ea
             - Linux servers
           link_templates:
             - Template OS Linux by Zabbix agent
-          inventory_mode: automatic
 ```
 
 The machine you are running this on, may need to be prepared, I use this playbook to ensure everything is in place to let the role work.
@@ -162,7 +161,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | Fedora | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 | openSUSE | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 | Ubuntu rolling | Zabbix has [limited OS support](https://www.zabbix.com/download). |
-
 
 
 Testing
