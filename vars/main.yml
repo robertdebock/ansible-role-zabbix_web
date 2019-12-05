@@ -6,7 +6,6 @@ _zabbix_web_packages:
     - zabbix-apache-conf
   RedHat:
     - zabbix-web-mysql
-    - zabbix-apache-conf
 
 zabbix_web_packages: "{{ _zabbix_web_packages[ansible_os_family] }}"
 
