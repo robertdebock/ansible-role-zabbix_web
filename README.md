@@ -210,7 +210,6 @@ This role uses the following modules:
 - service
 - template
 - zabbix_group
-- zabbix_host
 ```
 
 License
