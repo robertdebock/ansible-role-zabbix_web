@@ -7,8 +7,10 @@ _zabbix_web_packages:
   RedHat:
     - zabbix-web-mysql
     - zabbix-apache-conf
+  RedHat-7:
+    - zabbix-web-mysql
 
-zabbix_web_packages: "{{ _zabbix_web_packages[ansible_os_family] }}"
+zabbix_web_packages: "{{ _zabbix_web_packages[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_zabbix_web_packages[ansible_os_family]) }}"
 
 _zabbix_web_httpd_service:
   RedHat: httpd
