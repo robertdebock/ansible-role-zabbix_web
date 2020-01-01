@@ -4,6 +4,8 @@ zabbix_web
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-zabbix_web"> <img src="https://travis-ci.org/robertdebock/ansible-role-zabbix_web.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/35789"/> <img src="https://img.shields.io/ansible/quality/35789"/>
 
+<a href="https://github.com/robertdebock/ansible-role-zabbix_web/actions"><img src="https://github.com/robertdebock/ansible-role-zabbix_web/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure zabbix_web on your system.
 
 Example Playbook
@@ -59,6 +61,7 @@ The machine you are running this on, may need to be prepared, I use this playboo
         - name: zabbix
           password: zabbix
           priv: "zabbix.*:ALL"
+    - role: robertdebock.php
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
@@ -111,6 +114,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.container_docs
 - robertdebock.epel
 - robertdebock.httpd
+- robertdebock.php
 - robertdebock.mysql
 - robertdebock.python_pip
 - robertdebock.zabbix_repository

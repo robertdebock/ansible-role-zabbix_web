@@ -4,6 +4,7 @@
 - robertdebock.container_docs
 - robertdebock.epel
 - robertdebock.httpd
+- robertdebock.php
 - robertdebock.mysql
 - robertdebock.python_pip
 - robertdebock.zabbix_repository

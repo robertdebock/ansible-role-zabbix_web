@@ -16,6 +16,7 @@
         - name: zabbix
           password: zabbix
           priv: "zabbix.*:ALL"
+    - role: robertdebock.php
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
