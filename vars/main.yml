@@ -13,7 +13,7 @@ _zabbix_web_packages:
 zabbix_web_packages: "{{ _zabbix_web_packages[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_zabbix_web_packages[ansible_os_family]) }}"
 
 _zabbix_web_httpd_service:
+  default: apache2
   RedHat: httpd
-  Debian: apache2
 
-zabbix_web_httpd_service: "{{ _zabbix_web_httpd_service[ansible_os_family] }}"
+zabbix_web_httpd_service: "{{ _zabbix_web_httpd_service[ansible_os_family] | default(_zabbix_web_httpd_service['default']) }}"
