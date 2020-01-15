@@ -51,6 +51,9 @@ The machine you are running this on, may need to be prepared, I use this playboo
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
     - role: robertdebock.container_docs
     - role: robertdebock.mysql
       mysql_databases:
@@ -62,9 +65,6 @@ The machine you are running this on, may need to be prepared, I use this playboo
           password: zabbix
           priv: "zabbix.*:ALL"
     - role: robertdebock.php
-    - role: robertdebock.epel
-    - role: robertdebock.buildtools
-    - role: robertdebock.python_pip
     - role: robertdebock.httpd
     - role: robertdebock.zabbix_repository
     - role: robertdebock.zabbix_server
@@ -139,7 +139,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |container|tags|
 |---------|----|
 |debian|all|
-|el|7, 8|
+|el|7|
 |opensuse|all|
 |ubuntu|bionic|
 
