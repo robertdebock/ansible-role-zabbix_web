@@ -40,8 +40,7 @@
     state: present
     host_groups:
       - "{{ item.name }}"
-  with_items:
-    - "{{ zabbix_web_groups }}"
+  loop: "{{ zabbix_web_groups }}"
   when:
     - zabbix_web_groups is defined
   run_once: yes
@@ -69,8 +68,7 @@
 #         ip: "{{ item.interface_ip | default([omit]) }}"
 #         dns: "{{ item.interface_dns | default([omit]) }}"
 #         port: 10050
-#   with_items:
-#     - "{{ zabbix_web_hosts }}"
+#   loop: "{{ zabbix_web_hosts }}"
 #   when:
 #     - zabbix_web_groups is defined
 #   run_once: yes
