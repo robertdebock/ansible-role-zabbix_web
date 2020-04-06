@@ -89,12 +89,21 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for zabbix_web
 
-# Details to connect to the database.
-zabbix_web_database_host: localhost
-zabbix_web_database_port: 3306
+# The details to connect to the database.
 zabbix_web_database_name: zabbix
-zabbix_web_database_user: zabbix
-zabbix_web_database_pass: zabbix
+
+# How to connect to the mysql database, either `socket` or `network`.
+zabbix_web_mysql_connection: socket
+
+# Details to connect to the database.
+zabbix_web_database_name: zabbix
+
+# When `zabbix_web_mysql_connection` is set to `network` this role needs
+# these extra setting.
+# zabbix_web_database_host: localhost
+# zabbix_web_database_port: 3306
+# zabbix_web_database_user: zabbix
+# zabbix_web_database_pass: zabbix
 
 # Details to connect to Zabbix.
 zabbix_web_server: https://localhost/zabbix/
