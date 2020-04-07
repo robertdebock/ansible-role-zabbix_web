@@ -4,9 +4,13 @@
 global $DB;
 
 $DB['TYPE']     = 'MYSQL';
+$DB['DATABASE'] = '{{ zabbix_web_database_name }}';
+{% if zabbix_web_mysql_connection == "socket" %}
+$DB["SERVER"] = 'localhost:{{ zabbix_web_mysql_socket }}';
+{% else %}
 $DB['SERVER']   = '{{ zabbix_web_database_host }}';
 $DB['PORT']     = '{{ zabbix_web_database_port | default('3306') }}';
-$DB['DATABASE'] = '{{ zabbix_web_database_name }}';
+{% endif %}
 $DB['USER']     = '{{ zabbix_web_database_user }}';
 $DB['PASSWORD'] = '{{ zabbix_web_database_pass }}';
 
@@ -18,3 +22,4 @@ $ZBX_SERVER_PORT = '{{ zabbix_web_server_port }}';
 $ZBX_SERVER_NAME = '{{ zabbix_web_server_name }}';
 
 $IMAGE_FORMAT_DEFAULT = IMAGE_FORMAT_PNG;
+?>
