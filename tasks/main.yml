@@ -46,7 +46,7 @@
   run_once: yes
 
 # Disabled for now, because of https://github.com/ansible/ansible/issues/65304
-# Once https://github.com/ansible/ansible/pull/65392 is merges, reenable this.
+# Once https://github.com/ansible/ansible/pull/65392 is merged, re-enable this.
 # - name: add zabbix hosts
 #   zabbix_host:
 #     server_url: "{{ zabbix_web_server }}"
