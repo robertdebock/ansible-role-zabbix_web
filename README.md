@@ -151,7 +151,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|debian|all|
+|debian|buster|
 |el|7|
 |ubuntu|bionic|
 
@@ -219,3 +219,5 @@ Apache-2.0
 ## Author Information
 
 [Robert de Bock](https://robertdebock.nl/)
+
+Please consider [sponsoring me](https://github.com/sponsors/robertdebock).
