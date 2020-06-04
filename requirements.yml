@@ -4,6 +4,7 @@
 - robertdebock.container_docs
 - robertdebock.epel
 - robertdebock.httpd
+- robertdebock.openssl
 - robertdebock.php
 - robertdebock.mysql
 - robertdebock.python_pip
