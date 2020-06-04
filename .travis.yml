@@ -5,7 +5,7 @@
 language: python
 
 python:
-  - "3.7"
+  - "3.8"
 
 services:
   - docker
@@ -14,9 +14,9 @@ env:
   global:
     namespace="robertdebock"
   matrix:
+    - image="centos" tag="latest"
     - image="debian" tag="latest"
-    - image="centos" tag="7"
-    - image="ubuntu" tag="1804"
+    - image="ubuntu" tag="bionic"
 
 cache:
   - pip
@@ -31,5 +31,5 @@ script:
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   slack:
-    secure: UNSET
+    secure: "Xe8b2xJVxI4Rv5cl5Jss6aGijHm6c2OexO48M3Xms8vkjXzWKHkbNj2zTcv5D0ECTCYGwpMNsuRbNVCXd3LfFNI+kHgTKYTQ2RReeHCDXhn50NKEQ1tQnkUmOM1oAEOGS6nkbnN8JAtLzK/x8jmhy/JMLKCVQHv6Ngukplbm9LTJRf3g4JnHe1EEAyxz1Ev+WAHVFsnCw8xY/0d5uRVzKR6aTya6s8oCvjvYyhGrQFu2u9OfsMb0nnpqBM1KQ/xv9CkrIWwK2cR3LTBRyArSVnUr7xyoLi5YReXcYoAuUOsqn5QR7XB2o6dPHTZqih2o+A3k50VjZ/9pwW7TZa5WJOA6XR7CMib5/WDiG2KX9Dz3NMIdcdJZzUDw5gpE22dE2kY++OymWYnp6RdMkOhyv52UHtn8CT1fk78rP9iZg0S/U11/C5UCQRtLCppeEvqfuJ0zKXe0KjrDogjAVg1oUbcgV3qcP8x8rTg0Mis8G/Pi6BjdsP3aEWuiuE15gvt9TBYM11BkGTcYhSJF2Sf+yDLKAvCcfrNr7ADTiCFcQ+UrecTIBiY0hQYnS6PHwttwB/8BV9b9VouBdinjJCh4qCHCOWlNxaUhZIWrGe7IGC7pMIsXFdFGvmDfuz5Dx/FPTl5AvI9RLDNra7zA1p828oRn6o5PsoznL1DwkEKlSvM="
   email: false

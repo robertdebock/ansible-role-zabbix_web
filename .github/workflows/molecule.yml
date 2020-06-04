@@ -19,11 +19,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: molecule
-        uses: robertdebock/molecule-action@2.1.0
         with:
-          entrypoint: /usr/local/bin/molecule
-          args: lint
+          path: "${{ github.repository }}"
+      - name: molecule
+        uses: robertdebock/molecule-action@2.3.4
+        with:
+          command: lint
   test:
     needs:
       - lint
@@ -32,12 +33,12 @@ jobs:
       fail-fast: false
       matrix:
         config:
+          - image: "centos"
+            tag: "latest"
           - image: "debian"
             tag: "latest"
-          - image: "centos"
-            tag: "7"
           - image: "ubuntu"
-            tag: "1804"
+            tag: "bionic"
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -48,7 +49,7 @@ jobs:
       - name: parse apparmor for mysql
         run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: molecule
-        uses: robertdebock/molecule-action@2.1.0
+        uses: robertdebock/molecule-action@2.3.4
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
