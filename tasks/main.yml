@@ -43,34 +43,36 @@
   loop: "{{ zabbix_web_groups }}"
   when:
     - zabbix_web_groups is defined
+    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "container"
   run_once: yes
 
-# Disabled for now, because of https://github.com/ansible/ansible/issues/65304
-# Once https://github.com/ansible/ansible/pull/65392 is merged, re-enable this.
-# - name: add zabbix hosts
-#   zabbix_host:
-#     server_url: "{{ zabbix_web_server }}"
-#     login_user: "{{ zabbix_web_username }}"
-#     login_password: "{{ zabbix_web_password }}"
-#     validate_certs: "{{ zabbix_web_validate_certs }}"
-#     host_name: "{{ item.name }}"
-#     visible_name: "{{ item.visible_name | default(item.name) }}"
-#     description: "{{ item.description | default([omit]) }}"
-#     host_groups: "{{ item.groups }}"
-#     link_templates: "{{ item.link_templates }}"
-#     status: enabled
-#     state: present
-#     inventory_mode: automatic
-#     interfaces:
-#       - type: 1
-#         main: 1
-#         useip: 1
-#         ip: "{{ item.interface_ip | default([omit]) }}"
-#         dns: "{{ item.interface_dns | default([omit]) }}"
-#         port: 10050
-#   loop: "{{ zabbix_web_hosts }}"
-#   when:
-#     - zabbix_web_groups is defined
-#   run_once: yes
-#   loop_control:
-#     label: "{{ item.name }}"
+- name: add zabbix hosts
+  zabbix_host:
+    server_url: "{{ zabbix_web_server }}"
+    login_user: "{{ zabbix_web_username }}"
+    login_password: "{{ zabbix_web_password }}"
+    validate_certs: "{{ zabbix_web_validate_certs }}"
+    host_name: "{{ item.name }}"
+    visible_name: "{{ item.visible_name | default(item.name) }}"
+    description: "{{ item.description | default([omit]) }}"
+    host_groups: "{{ item.groups }}"
+    link_templates: "{{ item.link_templates }}"
+    status: enabled
+    state: present
+    inventory_mode: automatic
+    interfaces:
+      - type: 1
+        main: 1
+        useip: 1
+        ip: "{{ item.interface_ip | default([omit]) }}"
+        dns: "{{ item.interface_dns | default([omit]) }}"
+        port: 10050
+  loop: "{{ zabbix_web_hosts }}"
+  when:
+    - zabbix_web_groups is defined
+    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "container"
+  run_once: yes
+  loop_control:
+    label: "{{ item.name }}"
