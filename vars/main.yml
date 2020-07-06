@@ -1,5 +1,6 @@
 ---
 # vars file for zabbix_web
+
 _zabbix_web_packages:
   Debian:
     - zabbix-frontend-php
