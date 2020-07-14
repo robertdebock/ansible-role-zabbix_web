@@ -27,9 +27,9 @@
   pip:
     name: zabbix-api
     state: present
-  register: zabbix_install_zabbix_api_requirements
+  register: zabbix_web_install_zabbix_api_requirements
   retries: 3
-  until: zabbix_install_zabbix_api_requirements is succeeded
+  until: zabbix_web_install_zabbix_api_requirements is succeeded
   when:
     - zabbix_web_groups is defined or
       zabbix_web_hosts is defined
