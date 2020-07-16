@@ -9,9 +9,6 @@
     state: present
   notify:
     - restart httpd
-  register: zabbix_web_install_zabbix_web
-  until: zabbix_web_install_zabbix_web is succeeded
-  retries: 3
 
 - name: configure zabbix_web
   template:
@@ -27,9 +24,6 @@
   pip:
     name: zabbix-api
     state: present
-  register: zabbix_web_install_zabbix_api_requirements
-  retries: 3
-  until: zabbix_web_install_zabbix_api_requirements is succeeded
   when:
     - zabbix_web_groups is defined or
       zabbix_web_hosts is defined
