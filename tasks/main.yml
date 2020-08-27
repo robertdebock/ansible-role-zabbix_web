@@ -14,6 +14,7 @@
   template:
     src: zabbix.conf.php.j2
     dest: /etc/zabbix/web/zabbix.conf.php
+    mode: "0644"
   notify:
     - restart httpd
 
