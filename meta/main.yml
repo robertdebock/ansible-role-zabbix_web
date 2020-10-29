@@ -10,13 +10,17 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
+        - 7
         - 8
     - name: Debian
       versions:
-        - buster
+        - all
+    - name: OpenSUSE
+      versions:
+        - all
     - name: Ubuntu
       versions:
-        - bionic
+        - all
 
   galaxy_tags:
     - zabbix
