@@ -68,6 +68,7 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.php
     - role: robertdebock.httpd
     - role: robertdebock.zabbix_repository
+    - role: robertdebock.core_dependencies
     - role: robertdebock.zabbix_server
 ```
 
@@ -129,6 +130,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.bootstrap
 - robertdebock.buildtools
 - robertdebock.container_docs
+- robertdebock.core_dependencies
 - robertdebock.epel
 - robertdebock.httpd
 - robertdebock.mysql

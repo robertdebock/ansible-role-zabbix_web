@@ -26,4 +26,5 @@
     - role: robertdebock.php
     - role: robertdebock.httpd
     - role: robertdebock.zabbix_repository
+    - role: robertdebock.core_dependencies
     - role: robertdebock.zabbix_server
