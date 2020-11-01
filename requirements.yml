@@ -1,13 +1,14 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.container_docs
-- robertdebock.core_dependencies
-- robertdebock.epel
-- robertdebock.httpd
-- robertdebock.mysql
-- robertdebock.openssl
-- robertdebock.php
-- robertdebock.python_pip
-- robertdebock.zabbix_repository
-- robertdebock.zabbix_server
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.buildtools
+  - name: robertdebock.container_docs
+  - name: robertdebock.core_dependencies
+  - name: robertdebock.epel
+  - name: robertdebock.httpd
+  - name: robertdebock.mysql
+  - name: robertdebock.openssl
+  - name: robertdebock.php
+  - name: robertdebock.python_pip
+  - name: robertdebock.zabbix_repository
+  - name: robertdebock.zabbix_server
