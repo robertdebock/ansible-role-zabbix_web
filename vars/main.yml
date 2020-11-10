@@ -9,7 +9,7 @@ _zabbix_web_packages:
     - zabbix-web-mysql
     - zabbix-apache-conf
   RedHat-7:
-    - zabbix-web-mysql
+    - zabbix-web-mysql-scl
 
 zabbix_web_packages: "{{ _zabbix_web_packages[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_zabbix_web_packages[ansible_os_family]) }}"
 
