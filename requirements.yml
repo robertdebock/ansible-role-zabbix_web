@@ -10,5 +10,6 @@ roles:
   - name: robertdebock.openssl
   - name: robertdebock.php
   - name: robertdebock.python_pip
+  - name: robertdebock.selinux
   - name: robertdebock.zabbix_repository
   - name: robertdebock.zabbix_server

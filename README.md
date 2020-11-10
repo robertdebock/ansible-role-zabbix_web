@@ -48,6 +48,8 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.selinux
+    - role: robertdebock.container_docs
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.python_pip
@@ -55,7 +57,6 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
-    - role: robertdebock.container_docs
     - role: robertdebock.mysql
       mysql_databases:
         - name: zabbix
@@ -124,6 +125,7 @@ zabbix_web_validate_certs: no
 | [robertdebock.openssl](https://galaxy.ansible.com/robertdebock/openssl) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-openssl.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-openssl) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-openssl/actions) |
 | [robertdebock.php](https://galaxy.ansible.com/robertdebock/php) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-php.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-php) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-php/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-php/actions) |
 | [robertdebock.python_pip](https://galaxy.ansible.com/robertdebock/python_pip) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-python_pip.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-python_pip) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-python_pip/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-python_pip/actions) |
+| [robertdebock.selinux](https://galaxy.ansible.com/robertdebock/selinux) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-selinux.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-selinux) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-selinux/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-selinux/actions) |
 | [robertdebock.zabbix_repository](https://galaxy.ansible.com/robertdebock/zabbix_repository) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-zabbix_repository.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-zabbix_repository) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-zabbix_repository/actions) |
 | [robertdebock.zabbix_server](https://galaxy.ansible.com/robertdebock/zabbix_server) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-zabbix_server.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-zabbix_server) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-zabbix_server/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-zabbix_server/actions) |
 
