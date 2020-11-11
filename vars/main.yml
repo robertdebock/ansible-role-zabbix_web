@@ -19,7 +19,7 @@ _zabbix_configuration_path:
   default: /etc/zabbix/web
   Ubuntu-16: /usr/share/zabbix/conf
 
-zabbix_configuration_path: "{{ _zabbix_configuration_path[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default('default') }}"
+zabbix_configuration_path: "{{ _zabbix_configuration_path[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_zabbix_configuration_path['default']) }}"
 
 _zabbix_web_httpd_service:
   default: apache2
