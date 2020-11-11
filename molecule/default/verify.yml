@@ -5,5 +5,10 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
-      ping:
+    - name: check web interface
+      uri:
+        url: "https://localhost/zabbix"
+        return_content: yes
+      register: zabbix_web_check_web_interface
+      failed_when:
+        - "'Zabbix SIA' not inzabbix_web_check_web_interface.content"
