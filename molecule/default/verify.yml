@@ -9,6 +9,7 @@
       uri:
         url: "https://localhost/zabbix"
         return_content: yes
+        validate_certs: false
       register: zabbix_web_check_web_interface
       failed_when:
         - "'Zabbix SIA' not in zabbix_web_check_web_interface.content"
