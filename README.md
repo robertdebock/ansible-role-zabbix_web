@@ -142,7 +142,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|el|7, 8|
+|el|8|
 |debian|buster|
 |opensuse|all|
 |ubuntu|all|
@@ -162,7 +162,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | Alpine | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 | amazonlinux | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 | Archlinux | Zabbix has [limited OS support](https://www.zabbix.com/download). |
-| CentOS 8 | Zabbix has [limited OS support](https://www.zabbix.com/download). |
+| CentOS 7 | Zabbix (5) requires php 7, not available on CentOS 7. |
 | Debian | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 | Fedora | Zabbix has [limited OS support](https://www.zabbix.com/download). |
 | openSUSE | Zabbix has [limited OS support](https://www.zabbix.com/download). |

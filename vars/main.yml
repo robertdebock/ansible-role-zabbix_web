@@ -8,8 +8,6 @@ _zabbix_web_packages:
   RedHat:
     - zabbix-web-mysql
     - zabbix-apache-conf
-  RedHat-7:
-    - zabbix-web
   Suse:
     - zabbix-web-mysql
 

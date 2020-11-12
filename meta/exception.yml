@@ -6,8 +6,8 @@ exceptions:
     reason: Zabbix has [limited OS support](https://www.zabbix.com/download).
   - variation: Archlinux
     reason: Zabbix has [limited OS support](https://www.zabbix.com/download).
-  - variation: CentOS 8
-    reason: Zabbix has [limited OS support](https://www.zabbix.com/download).
+  - variation: CentOS 7
+    reason: Zabbix (5) requires php 7, not available on CentOS 7.
   - variation: Debian
     reason: Zabbix has [limited OS support](https://www.zabbix.com/download).
   - variation: Fedora
