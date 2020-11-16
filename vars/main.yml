@@ -10,6 +10,7 @@ _zabbix_web_packages:
     - zabbix-apache-conf
   Suse:
     - zabbix-web-mysql
+    - zabbix-apache-conf
 
 zabbix_web_packages: "{{ _zabbix_web_packages[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_zabbix_web_packages[ansible_os_family]) }}"
 
