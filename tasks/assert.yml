@@ -1,4 +1,5 @@
 ---
+
 - name: test if zabbix_web_database_name is set correctly
   assert:
     that:
