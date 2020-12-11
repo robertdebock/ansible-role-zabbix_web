@@ -69,7 +69,7 @@
         port: 10050
   loop: "{{ zabbix_web_hosts }}"
   when:
-    - zabbix_web_groups is defined
+    - zabbix_web_hosts is defined
     - ansible_connection != "docker"
   run_once: yes
   loop_control:
