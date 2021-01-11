@@ -28,7 +28,7 @@ zabbix_web_httpd_service: "{{ _zabbix_web_httpd_service[ansible_os_family] | def
 
 _zabbix_web_mysql_socket:
   default: /var/run/mysql/mysql.sock
-  Debian: /tmp/mysqld.sock
+  Debian: /run/mysql/mysqld.sock
   RedHat: /var/lib/mysql/mysql.sock
 
 zabbix_web_mysql_socket: "{{ _zabbix_web_mysql_socket[ansible_os_family] | default(_zabbix_web_mysql_socket['default']) }}"
