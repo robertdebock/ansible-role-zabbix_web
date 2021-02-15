@@ -1,28 +1,28 @@
 ---
 
 - name: test if zabbix_web_database_name is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - zabbix_web_database_name is defined
       - zabbix_web_database_name is string
     quiet: yes
 
 - name: test if zabbix_web_database_user is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - zabbix_web_database_user is defined
       - zabbix_web_database_user is string
     quiet: yes
 
 - name: test if zabbix_web_database_pass is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - zabbix_web_database_pass is defined
       - zabbix_web_database_pass is string
     quiet: yes
 
 - name: test if zabbix_web_mysql_connection is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - zabbix_web_mysql_connection is defined
       - zabbix_web_mysql_connection is string
@@ -30,7 +30,7 @@
     quiet: yes
 
 - name: test if zabbix_web_database_host is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - zabbix_web_database_host is defined
       - zabbix_web_database_host is string
