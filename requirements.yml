@@ -13,3 +13,6 @@ roles:
   - name: robertdebock.selinux
   - name: robertdebock.zabbix_repository
   - name: robertdebock.zabbix_server
+collections:
+  - name: ansible.builtin
+  - name: community.zabbix

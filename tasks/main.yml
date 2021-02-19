@@ -7,14 +7,14 @@
   delegate_to: localhost
 
 - name: install zabbix_web
-  package:
+  ansible.builtin.package:
     name: "{{ zabbix_web_packages }}"
     state: present
   notify:
     - restart httpd
 
 - name: configure zabbix_web
-  template:
+  ansible.builtin.template:
     src: zabbix.conf.php.j2
     dest: "{{ zabbix_configuration_path }}/zabbix.conf.php"
     mode: "0644"
@@ -22,10 +22,10 @@
     - restart httpd
 
 - name: flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: install zabbix-api requirements
-  pip:
+  ansible.builtin.pip:
     name: zabbix-api
     state: present
   when:
@@ -33,7 +33,7 @@
       zabbix_web_hosts is defined
 
 - name: add zabbix groups
-  zabbix_group:
+  community.zabbix.zabbix_group:
     server_url: "{{ zabbix_web_server }}"
     login_user: "{{ zabbix_web_username }}"
     login_password: "{{ zabbix_web_password }}"
@@ -48,7 +48,7 @@
   run_once: yes
 
 - name: add zabbix hosts
-  zabbix_host:
+  community.zabbix.zabbix_host:
     server_url: "{{ zabbix_web_server }}"
     login_user: "{{ zabbix_web_username }}"
     login_password: "{{ zabbix_web_password }}"
