@@ -3,3 +3,5 @@ collections:
   - name: community.docker
   - name: community.general
   - name: community.crypto
+  - name: ansible.posix
+  - name: community.zabbix
