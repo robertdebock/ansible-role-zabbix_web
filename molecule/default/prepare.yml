@@ -26,6 +26,7 @@
           priv: "zabbix.*:ALL"
     - role: robertdebock.php
     - role: robertdebock.httpd
+    - role: robertdebock.ca_certificates
     - role: robertdebock.zabbix_repository
     - role: robertdebock.core_dependencies
     - role: robertdebock.zabbix_server
