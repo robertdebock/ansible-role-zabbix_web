@@ -15,8 +15,6 @@ roles:
   - name: robertdebock.zabbix_repository
   - name: robertdebock.zabbix_server
 collections:
-  - name: community.general
-  - name: community.docker
   - name: community.zabbix
   - name: ansible.posix
   - name: community.crypto
