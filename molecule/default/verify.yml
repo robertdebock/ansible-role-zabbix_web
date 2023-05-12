@@ -5,7 +5,7 @@
   gather_facts: no
 
   tasks:
-    - name: check web interface
+    - name: Check web interface
       ansible.builtin.uri:
         url: "http://localhost/zabbix"
         return_content: yes
