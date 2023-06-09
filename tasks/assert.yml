@@ -5,6 +5,7 @@
     that:
       - zabbix_web_database_name is defined
       - zabbix_web_database_name is string
+      - zabbix_web_database_name is not none
     quiet: yes
 
 - name: assert | Test if zabbix_web_database_user is set correctly
@@ -12,6 +13,7 @@
     that:
       - zabbix_web_database_user is defined
       - zabbix_web_database_user is string
+      - zabbix_web_database_user is not none
     quiet: yes
 
 - name: assert | Test if zabbix_web_database_pass is set correctly
@@ -19,6 +21,7 @@
     that:
       - zabbix_web_database_pass is defined
       - zabbix_web_database_pass is string
+      - zabbix_web_database_pass is not none
     quiet: yes
 
 - name: assert | Test if zabbix_web_mysql_connection is set correctly
@@ -34,6 +37,7 @@
     that:
       - zabbix_web_database_host is defined
       - zabbix_web_database_host is string
+      - zabbix_web_database_host is not none
     quiet: yes
   when:
     - zabbix_web_mysql_connection == "network"
