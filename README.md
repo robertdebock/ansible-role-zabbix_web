@@ -1,4 +1,4 @@
-# Ansible role [zabbix_web](#zabbix_web)
+# [Ansible role zabbix_web](#zabbix_web)
 
 Install and configure zabbix_web on your system.
 
