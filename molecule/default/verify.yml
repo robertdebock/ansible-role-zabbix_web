@@ -1,14 +1,14 @@
 ---
 - name: Verify
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   tasks:
     - name: Check web interface
       ansible.builtin.uri:
         url: "http://localhost/zabbix"
-        return_content: yes
+        return_content: true
       register: zabbix_web_check_web_interface
       failed_when:
         - "'Zabbix SIA' not in zabbix_web_check_web_interface.content"
