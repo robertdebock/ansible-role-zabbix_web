@@ -1,0 +1,35 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "zabbix_web" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.buildtools" [fillcolor=green style=filled]
+    "robertdebock.container_docs" [fillcolor=green style=filled]
+    "robertdebock.ca_certificates" [fillcolor=green style=filled]
+    "robertdebock.core_dependencies" [fillcolor=green style=filled]
+    "robertdebock.epel" [fillcolor=green style=filled]
+    "robertdebock.httpd" [fillcolor=green style=filled]
+    "robertdebock.mysql" [fillcolor=green style=filled]
+    "robertdebock.openssl" [fillcolor=green style=filled]
+    "robertdebock.php" [fillcolor=green style=filled]
+    "robertdebock.python_pip" [fillcolor=green style=filled]
+    "robertdebock.selinux" [fillcolor=green style=filled]
+    "robertdebock.zabbix_repository" [fillcolor=green style=filled]
+    "robertdebock.zabbix_server" [fillcolor=green style=filled]
+  }
+  "zabbix_web" -> "robertdebock.bootstrap"
+  "zabbix_web" -> "robertdebock.buildtools"
+  "zabbix_web" -> "robertdebock.container_docs"
+  "zabbix_web" -> "robertdebock.ca_certificates"
+  "zabbix_web" -> "robertdebock.core_dependencies"
+  "zabbix_web" -> "robertdebock.epel"
+  "zabbix_web" -> "robertdebock.httpd"
+  "zabbix_web" -> "robertdebock.mysql"
+  "zabbix_web" -> "robertdebock.openssl"
+  "zabbix_web" -> "robertdebock.php"
+  "zabbix_web" -> "robertdebock.python_pip"
+  "zabbix_web" -> "robertdebock.selinux"
+  "zabbix_web" -> "robertdebock.zabbix_repository"
+  "zabbix_web" -> "robertdebock.zabbix_server"
+}
