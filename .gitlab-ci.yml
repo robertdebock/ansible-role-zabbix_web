@@ -24,7 +24,9 @@ molecule:
       - image: "debian"
         tag: "bullseye"
       - image: "ubuntu"
-        tag: "focal"
+        tag: "latest"
+      - image: "ubuntu"
+        tag: "jammy"
 
 galaxy:
   image: python:3.13

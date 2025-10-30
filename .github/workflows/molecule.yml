@@ -19,7 +19,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: ansible-lint
-        uses: ansible/ansible-lint@main
+        uses: ansible/ansible-lint@v25.9.2
 
   molecule:
     needs:
@@ -34,7 +34,9 @@ jobs:
           - image: "debian"
             tag: "bullseye"
           - image: "ubuntu"
-            tag: "focal"
+            tag: "latest"
+          - image: "ubuntu"
+            tag: "jammy"
     steps:
       - name: checkout
         uses: actions/checkout@v4

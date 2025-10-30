@@ -16,7 +16,8 @@ galaxy_info:
         - bullseye
     - name: Ubuntu
       versions:
-        - focal
+        - noble
+        - jammy
 
   galaxy_tags:
     - zabbix
