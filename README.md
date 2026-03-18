@@ -58,7 +58,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: robertdebock.openssl
       openssl_items:
         - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
+          common_name: "{{ ansible_facts['fqdn'] }}"
     - role: robertdebock.mysql
       mysql_databases:
         - name: zabbix
@@ -100,7 +100,7 @@ zabbix_web_database_pass: zabbix
 # zabbix_web_database_port: 3306
 
 # Details to connect to Zabbix.
-zabbix_web_server: "{{ ansible_fqdn }}"
+zabbix_web_server: "{{ ansible_facts['fqdn'] }}"
 zabbix_web_server_port: 10051
 zabbix_web_server_name: zabbix
 
