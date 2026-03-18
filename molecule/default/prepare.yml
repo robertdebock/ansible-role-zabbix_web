@@ -14,7 +14,7 @@
     - role: robertdebock.openssl
       openssl_items:
         - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
+          common_name: "{{ ansible_facts['fqdn'] }}"
     - role: robertdebock.mysql
       mysql_databases:
         - name: zabbix

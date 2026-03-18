@@ -32,8 +32,8 @@
     - httpd_can_network_connect_db
     - httpd_can_connect_zabbix
   when:
-    - ansible_selinux.status is defined
-    - ansible_selinux.status == "enabled"
+    - ansible_facts['selinux'].status is defined
+    - ansible_facts['selinux'].status == "enabled"
 
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
