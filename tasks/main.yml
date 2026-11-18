@@ -42,6 +42,7 @@
   ansible.builtin.pip:
     name: zabbix-api
     state: present
+    break_system_packages: true
   when:
     - zabbix_web_groups is defined or
       zabbix_web_hosts is defined
